@@ -1,57 +1,42 @@
 from pyspark.sql.functions import col
 
-malcodes = ["exyna", "nacc", "pfxvy"]
-table_keywords = ["ivr", "usvir"]
-column_keywords = ["type-is", "agent_id"]
+# --- Part 1: Tables that match name keywords --- #
+print("=== Part 1: Matching Table Names and Their Columns ===")
 
-# ---- PART 1: Search by table name pattern and describe columns ---- #
 for mal in malcodes:
-    print(f"\n🔍 Searching in malcode: {mal.upper()}")
-    base_path = f"abfss://{mal.lower()}@edaaaedle1sitsrz.dfs.core.windows.net/{mal.upper()}/"
-    
-    try:
-        results = dbutils.fs.ls(base_path)
-    except:
-        print(f"⚠️ Could not access: {base_path}")
-        continue
+    base_path = f"abfss://{mal}@edaaaedle1sitsrz.dfs.core.windows.net/{mal.upper()}/"
+    results = dbutils.fs.ls(base_path)
 
     for item in results:
-        table_path = item.path
-        if any(keyword.lower() in table_path.lower() for keyword in table_keywords):
-            print(f"✅ Found Table: {table_path}")
-            try:
-                df_desc = spark.sql(f"DESCRIBE delta.`{table_path}`") \
-                               .filter(~col("col_name").startswith("#")) \
-                               .select("col_name", "data_type")
-                display(df_desc)
-            except Exception as e:
-                print(f"❌ Failed to describe table {table_path}: {str(e)}")
+        table_name = item.name.rstrip('/')
+        full_path = f"{base_path}{table_name}/current/"
 
-# ---- PART 2: Search for tables containing given column keywords ---- #
-for mal in malcodes:
-    print(f"\n🔍 Searching for columns in malcode: {mal.upper()}")
-    base_path = f"abfss://{mal.lower()}@edaaaedle1sitsrz.dfs.core.windows.net/{mal.upper()}/"
-
-    try:
-        results = dbutils.fs.ls(base_path)
-    except:
-        print(f"⚠️ Could not access: {base_path}")
-        continue
-
-    for item in results:
-        table_path = item.path
-        try:
-            df_desc = spark.sql(f"DESCRIBE delta.`{table_path}`") \
+        if any(keyword.lower() in table_name.lower() for keyword in table_keywords):
+            print(f"\n✅ Table matched: {full_path}")
+            df_desc = spark.sql(f"DESCRIBE delta.`{full_path}`") \
                            .filter(~col("col_name").startswith("#")) \
                            .select("col_name", "data_type")
-            
-            filtered = df_desc.filter(
-                col("col_name").rlike("|".join([f".*{c}.*" for c in column_keywords]))
-            )
+            display(df_desc)
 
-            if filtered.count() > 0:
-                print(f"✅ Table with matching columns: {table_path}")
-                display(df_desc)
+# --- Part 2: Tables that contain column keywords anywhere in their schema --- #
+print("\n=== Part 2: Tables that Contain Matching Columns ===")
 
-        except Exception as e:
-            print(f"❌ Failed to describe table {table_path}: {str(e)}")
+for mal in malcodes:
+    base_path = f"abfss://{mal}@edaaaedle1sitsrz.dfs.core.windows.net/{mal.upper()}/"
+    results = dbutils.fs.ls(base_path)
+
+    for item in results:
+        table_name = item.name.rstrip('/')
+        full_path = f"{base_path}{table_name}/current/"
+
+        df_desc = spark.sql(f"DESCRIBE delta.`{full_path}`") \
+                       .filter(~col("col_name").startswith("#")) \
+                       .select("col_name", "data_type")
+
+        matched_cols = df_desc.filter(
+            col("col_name").rlike("|".join([f".*{c}.*" for c in column_keywords]))
+        )
+
+        if matched_cols.count() > 0:
+            print(f"\n✅ Table has matching column(s): {full_path}")
+            display(df_desc)
