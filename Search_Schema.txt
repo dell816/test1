@@ -1,6 +1,10 @@
 from pyspark.sql.functions import col
 
-# --- Part 1: Tables that match name keywords --- #
+malcodes = ["exyna", "nacc", "pfxvy"]
+table_keywords = ["ivr", "usvir"]
+column_keywords = ["type-is", "agent_id"]
+
+# --- Part 1: Table names match keywords --- #
 print("=== Part 1: Matching Table Names and Their Columns ===")
 
 for mal in malcodes:
@@ -11,14 +15,17 @@ for mal in malcodes:
         table_name = item.name.rstrip('/')
         full_path = f"{base_path}{table_name}/current/"
 
-        if any(keyword.lower() in table_name.lower() for keyword in table_keywords):
-            print(f"\n✅ Table matched: {full_path}")
-            df_desc = spark.sql(f"DESCRIBE delta.`{full_path}`") \
-                           .filter(~col("col_name").startswith("#")) \
-                           .select("col_name", "data_type")
-            display(df_desc)
+        if any(k.lower() in table_name.lower() for k in table_keywords):
+            try:
+                df_desc = spark.sql(f"DESCRIBE delta.`{full_path}`") \
+                               .filter(~col("col_name").startswith("#")) \
+                               .select("col_name", "data_type")
+                print(f"\n✅ Table matched: {full_path}")
+                display(df_desc)
+            except Exception:
+                pass  # Skip if not a Delta table
 
-# --- Part 2: Tables that contain column keywords anywhere in their schema --- #
+# --- Part 2: Column keywords appear anywhere in schema --- #
 print("\n=== Part 2: Tables that Contain Matching Columns ===")
 
 for mal in malcodes:
@@ -29,14 +36,17 @@ for mal in malcodes:
         table_name = item.name.rstrip('/')
         full_path = f"{base_path}{table_name}/current/"
 
-        df_desc = spark.sql(f"DESCRIBE delta.`{full_path}`") \
-                       .filter(~col("col_name").startswith("#")) \
-                       .select("col_name", "data_type")
+        try:
+            df_desc = spark.sql(f"DESCRIBE delta.`{full_path}`") \
+                           .filter(~col("col_name").startswith("#")) \
+                           .select("col_name", "data_type")
 
-        matched_cols = df_desc.filter(
-            col("col_name").rlike("|".join([f".*{c}.*" for c in column_keywords]))
-        )
+            matched_cols = df_desc.filter(
+                col("col_name").rlike("|".join([f".*{c}.*" for c in column_keywords]))
+            )
 
-        if matched_cols.count() > 0:
-            print(f"\n✅ Table has matching column(s): {full_path}")
-            display(df_desc)
+            if matched_cols.count() > 0:
+                print(f"\n✅ Table has matching column(s): {full_path}")
+                display(df_desc)
+        except Exception:
+            pass  # Skip if not a Delta table
