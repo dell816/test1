@@ -1,0 +1,15 @@
+متوجه شدم، اینم نسخه ساده و محاوره‌ای انگلیسی برای پریزنتیشن شما، طوری که راحت بخونی و مثل حرف زدن طبیعی باشه:
+
+⸻
+
+Introduction & Goal of the Session
+
+Hey everyone, thanks for being here.
+
+So today I want to talk about a problem we often face when we’re looking for table schemas across different places like Bitbucket, DBFS, Azure SQL, or our Delta tables in SRZ. The current process is slow and manual — we usually have to open different tools, search by eye, pull data into CSV files, compare them, and even then, sometimes we can’t find what we’re looking for. It takes time and can get frustrating.
+
+That’s why I started thinking: what if we build a tool that can help us with this? The idea is, we give it part of a table name or column name, and it automatically searches across all the data sources we care about, and gives us a list of matches. It should save us a lot of time and manual work.
+
+In this session, I’ll show you the basic idea, a diagram of how it works, and how we can use it.
+
+The only challenge I see for now is access — especially when connecting from a Databricks notebook to something like SQL Server. There might be firewalls, tokens, or authentication needed, so we’ll probably need support from other teams like Matthew’s team to get that sorted out. And if not, we can think of other ways to .
