@@ -9,4 +9,9 @@ FULL OUTER JOIN Table2 t2
 WHERE
     t1.AgentID IS NULL OR
     t2.AgentID IS NULL OR
-    t1.Amount <> t2.Amount;
+    (t1.Amount IS NULL AND t2.Amount IS NOT NULL) OR
+    (t1.Amount IS NOT NULL AND t2.Amount IS NULL) OR
+    (t1.Amount <> t2.Amount)
+ORDER BY
+    COALESCE(t1.AgentID, t2.AgentID),
+    COALESCE(t1.Date, t2.Date);
