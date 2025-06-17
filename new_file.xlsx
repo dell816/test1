@@ -11,3 +11,115 @@ That’s why I started thinking: what if we build a tool that can help us with t
 In this session, I’ll show you the basic idea, a diagram of how it works, and how we can use it.
 
 The only challenge I see for now is access — especially when connecting from a Databricks notebook to something like SQL Server. There might be firewalls, tokens, or authentication needed, so we’ll probably need support from other teams like Matthew’s team to get that sorted out. And if not, we can think of other ways to .
+
+
+
+
+
+Based on your attached images — your feature sheet, the prework Excel, and the workshop invitation — here is a strong and structured response to the question:
+
+⸻
+
+Why these projects are meaningful and pivotal to me
+
+These projects represent critical milestones in my professional journey across both TD and the Middle East region. Each one reflects a combination of problem-solving, technical innovation, and leadership.
+
+⸻
+
+🔹 1. Unified Metadata Search Tool
+
+Why it’s meaningful:
+This tool addresses a core challenge in any large data ecosystem: locating schema, table names, and relationships efficiently.
+Message:
+I want to highlight my ability to transform pain points into tools that improve collaboration, onboarding, and productivity across teams. This project shows how innovation can begin from a conversation and turn into a tangible solution.
+
+⸻
+
+🔹 2. IDC Populator (Data Populator Tool)
+
+Why it’s meaningful:
+By leveraging Databricks, Python, and Pandas, I automated a time-consuming ingestion process, reducing delays by 30%.
+Message:
+This project demonstrates how technical depth can create real-time performance gains at scale, with direct value to the business and platform stability.
+
+⸻
+
+🔹 3. API Ingestion Migration Project
+
+Why it’s meaningful:
+This project automated ingestion from sources like Salesforce and third-party APIs, replacing time-consuming manual work.
+Message:
+It reflects my passion for automation, pattern recognition, and designing reusable ingestion frameworks in a scalable way.
+
+⸻
+
+🔹 4. ERP Development – Supply Chain
+
+Why it’s meaningful:
+I designed a full ERP system covering sales, accounting, inventory, routing, and more. This was one of the most complex end-to-end systems I’ve led.
+Message:
+This shows my ability to build foundational business systems that improve efficiency and support long-term growth. It highlights both technical architecture and strategic thinking.
+
+⸻
+
+🔹 5. Established IT Department
+
+Why it’s meaningful:
+Built a team from scratch, implemented infrastructure, and developed SOPs. It was a leadership challenge and growth experience.
+Message:
+This shows my people management skills, department setup, and the ability to deliver systems while building a team culture.
+
+⸻
+
+🔹 6. ERP Implementation
+
+Why it’s meaningful:
+Executed a massive rollout — from infrastructure to training — over multiple branches.
+Message:
+I want to highlight my project execution experience, large-scale rollout planning, and cross-functional coordination.
+
+⸻
+
+🔹 7. SQL OLTP Design + BI
+
+Why it’s meaningful:
+I designed an OLTP structure integrated with BI, providing performance and reporting improvements.
+Message:
+It reflects my deep understanding of data modeling, reporting, and supporting business insights through the right backend structure.
+
+⸻
+
+🔹 8. Data Warehouse + BI
+
+Why it’s meaningful:
+Created a central DW using SSIS and reporting layers for business visibility.
+Message:
+Demonstrates my expertise in ETL, DW design, and report delivery, especially using Microsoft technologies like SSIS/SSRS.
+
+⸻
+
+🔹 9. Ordering Mobile App Designer + DB
+
+Why it’s meaningful:
+I led development of a mobile ordering app integrated with the backend for retail and restaurant clients.
+Message:
+This showcases full-stack thinking and an ability to create intuitive customer-facing solutions driven by backend design.
+
+⸻
+
+🔹 10. GIS Tracking for Sales/Distributors
+
+Why it’s meaningful:
+Developed a system to track distributor locations and route optimization.
+Message:
+This is where I began connecting data with real-world logistics, leading into my passion for AI in route optimization and spatial analytics.
+
+⸻
+
+💡 Final Message for Managers:
+
+These projects show that I am not only technically capable but also strategic, customer-focused, and always seeking to add business value. Whether it’s through empowering others with tools, improving operational efficiency, or leading cross-functional initiatives, I aim to combine innovation and impact.
+
+⸻
+
+Would you like me to format this into a slide for your presentation to managers or include it in your PowerPoint feature sheet file?
