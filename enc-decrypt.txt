@@ -1,0 +1,56 @@
+from cryptography.fernet import Fernet
+import pandas as pd
+
+# 1. Generate encryption key (do this once and save the key securely)
+key = Fernet.generate_key()
+fernet = Fernet(key)
+
+# Print the encryption key so you can save it
+print("🔐 Save this encryption key securely:")
+print(key.decode())
+
+# 2. Run the SQL query
+df = spark.sql("""
+SELECT Agent_Id, Date, prc
+FROM titan_login_daily
+""")
+
+# 3. Convert to Pandas DataFrame
+pdf = df.toPandas()
+
+# 4. Encrypt Agent_Id only
+pdf["Agent_Id"] = pdf["Agent_Id"].apply(lambda x: fernet.encrypt(x.encode()).decode())
+
+# 5. Display the result as a SQL-style table
+display(spark.createDataFrame(pdf))
+
+
+
+
+
+Decryption Script (Python, for local PC)
+
+Save this as decrypt_agent_ids.py or run it in any local environment (e.g. VSCode, Jupyter, terminal).
+
+from cryptography.fernet import Fernet
+import pandas as pd
+
+# 1. Paste your previously saved encryption key here
+key = b'your-encryption-key-here'  # Example: b'gAAAAABk...'
+fernet = Fernet(key)
+
+# 2. Read the space-separated .txt file
+input_file = "encrypted_output.txt"   # Update path if needed
+df = pd.read_csv(input_file, sep=" ", header=None, names=["Encrypted_AgentID", "Date", "Prc"])
+
+# 3. Decrypt Agent IDs
+df["Decrypted_AgentID"] = df["Encrypted_AgentID"].apply(lambda x: fernet.decrypt(x.encode()).decode())
+
+# 4. Reorder columns (optional)
+df = df[["Decrypted_AgentID", "Date", "Prc"]]
+
+# 5. Save to CSV (optional)
+df.to_csv("decrypted_output.csv", index=False)
+
+# 6. Print result (optional)
+print(df.head())
