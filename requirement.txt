@@ -1,3 +1,24 @@
 pandas =='1.1.1'
 pytorch == '2.1.1'
 
+IVR project update and duplicated efforts
+“I also wanted to mention my experience with the IVR project. Through this work, I’ve noticed that there seem to be some duplicate and repetitive efforts across the AI2 team. Is there any plan to streamline or align these activities?”
+
+
+
+1. About the PES changes and your role
+“I wanted to ask for some clarity on the recent changes happening within PES. Specifically, will we still be supporting the validation-related work going forward? Also, could you share how these changes might affect my responsibilities? Do you anticipate further changes in the near future?”
+
+⸻
+
+2. Opportunities and assignments
+“Are there any new plans, projects, or areas of responsibility that you see me getting involved in? For example, is there any opportunity to work with Evan on the Athena support project?”
+
+⸻
+
+3. Career development and advice
+“What advice on how I can grow to become a top performer or ‘legendary’ in the team. I’m naturally more of a quiet, person rather than speaking Based on that personality, what would you recommend I focus on to make the strongest impact?”
+
+4. Feedback on performance
+I’d also appreciate your feedback on how you assess my performance over this period.
+What do you think I’ve done well, and where should I focus to add more value?”
