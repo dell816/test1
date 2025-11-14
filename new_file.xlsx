@@ -1,3 +1,80 @@
+ ⭐ **Real-World ETL Pipeline Example – TD Bank (ADF + Databricks)**
+
+**“Tell me about an ETL process you built at TD using ADF and Databricks.”**
+
+In my current role at TD Bank, one of the key ETL pipelines I worked on involved ingesting large volumes of operational and analytical data from on-prem SQL environments into **Azure Data Lake** and transforming it for downstream analytics teams.
+
+### **1. Source Systems & Data Movement**
+
+The pipeline ingested data from:
+
+* **On-prem SQL Server**
+* **Internal Cisco telephony datasets**
+* **Legacy data repositories used by analytics and QA teams**
+
+The datasets were large, frequently updated, and required consistent schemas.
+
+### **2. Orchestration – Azure Data Factory**
+
+I used **Azure Data Factory (ADF)** to orchestrate the end-to-end workflow:
+
+* Scheduled incremental ingestion triggers
+* Used copy activities to extract from SQL systems
+* Implemented parameterized pipelines so the same pipeline could ingest **multiple datasets**, improving maintainability
+* Added **retry logic**, logging, and monitoring alerts to guarantee reliability in production
+
+ADF moved the raw data into **bronze (raw) zones** in the data lake.
+
+### **3. Transformation – Azure Databricks & PySpark**
+
+Once the data landed in the lake, **Databricks** handled transformation and quality checks:
+
+* Used **PySpark** to clean, normalize, and merge the data
+* Implemented **schema validation** to manage schema drift
+* Performed **key transformations** such as:
+
+  * flattening nested structures
+  * standardizing timestamps
+  * joining reference tables
+  * deduplicating large datasets
+
+In one initiative, I developed a **Data Populator Tool (Python + Databricks + Regex)** to automate ingestion preparation, reducing manual transformation time by **~25%**.
+
+### **4. Storage – Delta Lake Architecture**
+
+Transformed data was stored in:
+
+* **Bronze** → Raw ingestion
+* **Silver** → Cleaned and validated data
+* **Gold** → Aggregated or business-ready tables
+
+Delta capabilities like **ACID transactions, time-travel, and optimized Z-ordering** helped with query performance and traceability — which is critical for regulated data environments like banking.
+
+### **5. Metadata & Governance**
+
+I also built a **Unified Metadata Search Tool** within Databricks:
+
+* Consolidated metadata from Delta tables, Bitbucket, GitHub, and SQL Server
+* Enabled developers and analysts to discover datasets more easily
+* Strengthened governance and minimized duplicated pipelines
+
+This tool improved operational efficiency and reduced dependency on tribal knowledge.
+
+### **6. Production Support & Monitoring**
+
+As part of L3 support:
+
+* Investigated ingestion failures
+* Resolved schema mismatch issues
+* Performed root-cause analysis for broken pipelines
+* Documented fixes and updated data lineage
+
+This experience is directly aligned with Deloitte’s expectations around **data quality, troubleshooting, and surveillance data reliability**.
+
+--------------------------
+
+
+
 https://www1.myrbcsso.rbcinsurance.com/rbcquoter/bol/auto/bundle?lang=en&key=WUVmTVk5QTNjYkxwVEREdlBhb3I4cytGQm9UYUd0ZTYvb3hZZ3B1Zm1kRk1uMS9ETExIMWhPUUd4emZRSzlYc0dIdVJJRDBTblgvaVlqK2prTnN2UEpwUkxlaWN2d3JBNXdGNmdsVjJOVjFJTXhpMFYxTmVjTDloUTJLd25oNldwYWZEeU5MTnUzd1Bzc2FmT050THBFSXZSWHlHZndvbXhwUzNXUVpNSUtBPQ
 
 Introduction & Goal of the Session
