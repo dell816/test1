@@ -1,0 +1,79 @@
+
+Below are well-written, measurable, and realistic objectives, tailored to:
+	•	Your DS&D / Data Science & Data Engineering role
+	•	Your actual PES, IVR, MBNA, Databricks, validation, and ID8 achievements
+	•	TD’s simplified framework
+	•	Your goal to progress toward Level 10
+
+You can copy-paste these directly into MyHR (Workday) and adjust metrics with your manager if needed.
+
+⸻
+
+✅ F26 Objectives (Draft)
+
+1. Business Outcomes
+
+Objective:
+Deliver high-quality, timely data validation and analytics solutions that improve metric accuracy, productivity, and business decision-making for PES, IVR, and downstream stakeholders.
+
+Key Results / Measures (SMART):
+	•	Deliver 100% of assigned PES and IVR DDR validations on time, meeting agreed data quality and completeness standards.
+	•	Identify, analyze, and resolve at least 3 high-impact data quality or metric issues (e.g., MBNA, Titan, legacy scorecards, Athena) through root-cause analysis and source tracing.
+	•	Develop and maintain production-ready Databricks notebooks (PySpark/SQL) that improve validation efficiency or automation by 20–30% compared to manual processes.
+	•	Successfully support new data products or metric rollouts by leading or significantly contributing to validation activities.
+
+Alignment to TD Goals:
+Supports disciplined execution, trusted data, and faster insight delivery for business partners.
+
+⸻
+
+2. Risk Culture
+
+Objective:
+Strengthen TD’s risk culture by proactively owning data quality, raising issues early, and ensuring transparency, traceability, and governance across analytics and validation processes.
+
+Key Results / Measures (SMART):
+	•	Demonstrate “Own It” by independently investigating and resolving complex data issues end-to-end, including legacy and on-prem sources.
+	•	Demonstrate “Raise It” by escalating 100% of material data quality, control, or lineage risks with clear evidence and impact assessment.
+	•	Demonstrate “Know It” by documenting data sources, limitations, assumptions, and validation logic for all major deliverables.
+	•	Contribute to improved governance by enhancing Databricks catalogs, metadata, or documentation to support auditability and downstream reuse.
+
+Alignment to TD Goals:
+Protects client and enterprise trust through strong controls, transparency, and responsible data use.
+
+⸻
+
+3. Leadership
+
+Objective:
+Demonstrate emerging technical leadership by driving innovation, improving tooling, mentoring peers, and investing in continuous learning to support team capability and future growth.
+
+Key Results / Measures (SMART):
+	•	Advance the ID8 “Unified Metadata Search” initiative by:
+	•	Delivering a functional MVP or pilot
+	•	Partnering cross-functionally (e.g., EDC, DaaS)
+	•	Driving adoption by at least one additional team
+	•	Actively mentor or support teammates by sharing technical knowledge, documentation, or reusable assets (e.g., notebooks, validation patterns, Git templates).
+	•	Complete targeted upskilling aligned with TD priorities (Databricks DE path, AI/ML, DLT, DBT, GitHub Copilot, Agentic AI) and apply learnings to day-to-day work.
+	•	Seek and incorporate regular feedback from manager and senior peers to progress toward readiness for Level 10 responsibilities.
+
+Alignment to TD Culture:
+Builds a stronger, more capable team while reinforcing accountability, collaboration, and continuous improvement.
+
+⸻
+
+✅ Optional “What Support I Need” (Good for manager discussion)
+	•	Regular mentoring and feedback from senior team members to accelerate technical depth and business impact.
+	•	Support and prioritization to scale ID8 beyond an idea into a production-ready capability.
+	•	Exposure to larger technical ownership or lead-level responsibilities aligned with Level 10 expectations.
+
+⸻
+
+✅ Next Step Suggestion
+
+If you want, I can:
+	•	Shorten these to perfectly fit Workday’s character limits
+	•	Tune metrics based on DS&D leadership expectations
+	•	Rewrite them as OKRs instead of SMART
+	•	Help you prep a manager talking script to get buy-in fast
+
