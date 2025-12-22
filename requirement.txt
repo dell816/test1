@@ -1,24 +1,35 @@
-pandas =='1.1.1'
-pytorch == '2.1.1'
-
-IVR project update and duplicated efforts
-“I also wanted to mention my experience with the IVR project. Through this work, I’ve noticed that there seem to be some duplicate and repetitive efforts across the AI2 team. Is there any plan to streamline or align these activities?”
-
-
-
-1. About the PES changes and your role
-“I wanted to ask for some clarity on the recent changes happening within PES. Specifically, will we still be supporting the validation-related work going forward? Also, could you share how these changes might affect my responsibilities? Do you anticipate further changes in the near future?”
+Below is a shorter, polished, TD-tone, professional but human version that includes loyalty, hard work, compliance, emotional context, and the case-by-case portal wording—without sounding pushy or inappropriate.
 
 ⸻
 
-2. Opportunities and assignments
-“Are there any new plans, projects, or areas of responsibility that you see me getting involved in? For example, is there any opportunity to work with Evan on the Athena support project?”
+Subject: Request for Review – Ontario Immigrant Nominee Program (OINP)
+
+Hello HR Team,
+
+I hope you are doing well.
+
+Following a conversation with an HR representative last week regarding the Ontario Immigrant Nominee Program (OINP), I was advised to submit my request through Employee Data Administration > Letter of Employment Request, as OINP-related requests are reviewed by TD on a case-by-case basis.
+
+I have been with TD since September 2022 and have lived in Canada for nearly five years with my family (my wife and our teenage daughter). During this time, I have consistently extended my work permit each year with the hope of becoming a permanent resident of Canada. The prolonged uncertainty has been stressful for our family, particularly for my daughter, who will be starting university next year and has been emotionally impacted by this situation.
+
+Two years ago, I received an OINP invitation; however, my application was refused due to a missing employer form. Since then, program rules have changed, and employers are now able to support eligible employees directly through the OINP portal. I would like to clarify that this process is not a sponsorship and does not create any employment obligation or responsibility for TD.
+
+I am a loyal and hardworking employee, and I take pride in following TD’s policies, rules, and professional standards. I truly value my role at TD and hope to continue contributing to the organization long-term as a permanent resident of Canada. After consulting with immigration lawyers and RCIC professionals, I was advised that requesting employer support would be the appropriate step.
+
+I respectfully ask if TD would be willing to review my case and consider supporting my OINP application. This support would mean a great deal to my family and would provide much-needed stability after several years of uncertainty.
+
+Please let me know if any additional information or documentation is required. Thank you very much for your time, understanding, and consideration.
+
+Kind regards,
+[Your Full Name]
+[Your Job Title]
+[Employee ID, if applicable]
 
 ⸻
 
-3. Career development and advice
-“What advice on how I can grow to become a top performer or ‘legendary’ in the team. I’m naturally more of a quiet, person rather than speaking Based on that personality, what would you recommend I focus on to make the strongest impact?”
+If you want, I can also:
+	•	Tighten it further to executive-level brevity
+	•	Adjust language to be even more conservative/legal
+	•	Customize it for TD HR Immigration team specifically
 
-4. Feedback on performance
-I’d also appreciate your feedback on how you assess my performance over this period.
-What do you think I’ve done well, and where should I focus to add more value?”
+Just say the word.
