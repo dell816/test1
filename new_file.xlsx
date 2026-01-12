@@ -1,4 +1,4 @@
-mi ⭐ **Real-World ETL Pipeline Example – TD Bank (ADF + Databricks)**
+Li mi ⭐ **Real-World ETL Pipeline Example – TD Bank (ADF + Databricks)**
 
 **“Tell me about an ETL process you built at TD using ADF and Databricks.”**
 
@@ -302,3 +302,8 @@ let's say I have a database where I have 30 plus monthly partitions. Okay? And I
 Right? And I would like to create a delta Lake on it and then provide a way to act still search for my end users. That is the use case. 
 What I would like you to do is to tell me walk me through the step-by-step process on audio do you achieve it. How do you take the data from these monthly partitions? How do you inject to Data Lake? 
 How do you create the delta Lake from there to make it accessible for the end user still for using my UI or using some APIs and whatnot. Okay, so in this case, so for example, we have at your time, I need the details step by step, like as a data engineer, where do you start, like over all the steps steps in moving the data and making it accessible. Source is a sql mi database
+
+
+##############
+
+Hi [Name], I spoke with Jason and, unfortunately, he shared that there are no decisions yet as the team is reviewing the Finance AI2 structure for F26. I wanted to be transparent that I’ve been waiting for this role for about two months, as it strongly aligns with my background and long-term interests. I remain very interested in the opportunity and would genuinely value the chance to contribute to your team and learn under your leadership, should the timing work out.
