@@ -1,4 +1,4 @@
-Li mi ⭐ **Real-World ETL Pipeline Example – TD Bank (ADF + Databricks)**
+no Li mi ⭐ **Real-World ETL Pipeline Example – TD Bank (ADF + Databricks)**
 
 **“Tell me about an ETL process you built at TD using ADF and Databricks.”**
 
@@ -304,6 +304,25 @@ What I would like you to do is to tell me walk me through the step-by-step proce
 How do you create the delta Lake from there to make it accessible for the end user still for using my UI or using some APIs and whatnot. Okay, so in this case, so for example, we have at your time, I need the details step by step, like as a data engineer, where do you start, like over all the steps steps in moving the data and making it accessible. Source is a sql mi 
 
 ======
+path = "abfss://home@edaaaazepca0edanacc0001.dfs.core.windows.net/users/EDC/"
+
+prefix = "ADIDO-5612-athena_validation_endc1-"
+suffix = ".csv"
+
+files = dbutils.fs.ls(path)
+
+matched_files = [
+    f for f in files
+    if f.name.startswith(prefix) and f.name.endswith(suffix)
+]
+
+if not matched_files:
+    raise Exception("No matching files found")
+
+
+
+
+
 from operator import attrgetter
 
 latest_file = sorted(
