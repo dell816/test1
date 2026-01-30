@@ -14,3 +14,61 @@ FULL OUTER JOIN Table2 t2
 WHERE t1.agent_id IS NULL 
    OR t2.agent_id IS NULL 
    OR t1.amount != t2.amount;
+
+
+
+
+
+
+
+
+
+WITH FiltersWFM AS (
+    SELECT
+        COALESCE(wfm.ba_account_number, sc.BAAccountNumber) AS ba_account,
+
+        COALESCE(wfm.calldatetime, sc.CallDateTime) AS date,
+
+        /* Overall discrepancy type */
+        CASE
+            WHEN wfm.ba_account_number IS NULL THEN 'Only in sc'
+            WHEN sc.BAAccountNumber IS NULL THEN 'Only in ath'
+            WHEN
+                COALESCE(wfm.hold_time, 0)            <> COALESCE(sc.HoldTime, 0)
+             OR COALESCE(wfm.no_sale, 0)              <> COALESCE(sc.no_sale, 0)
+             OR COALESCE(wfm.disposition_code, '')    <> COALESCE(sc.disposition_code, '')
+             OR COALESCE(wfm.ob_file_name, '')        <> COALESCE(sc.ob_file_name, '')
+            THEN 'mismatch'
+            ELSE NULL
+        END AS discrepancy_type,
+
+        /* Comparison columns */
+        wfm.hold_time          AS ath_hold_time,
+        sc.HoldTime            AS sc_holdtime,
+
+        wfm.no_sale            AS ath_no_sale,
+        sc.no_sale             AS sc_no_sale,
+
+        wfm.disposition_code   AS ath_disposition_code,
+        sc.disposition_code    AS sc_disposition_code,
+
+        wfm.ob_file_name       AS ath_ob_file_name,
+        sc.ob_file_name        AS sc_ob_file_name
+
+    FROM fact_outbound_dialer_202601 wfm
+    FULL OUTER JOIN outbound_src sc
+        ON sc.BAAccountNumber = wfm.ba_account_number
+       AND sc.CallDateTime    = wfm.calldatetime
+
+    WHERE
+        wfm.ba_account_number IS NULL
+        OR sc.BAAccountNumber IS NULL
+        OR COALESCE(wfm.hold_time, 0)          <> COALESCE(sc.HoldTime, 0)
+        OR COALESCE(wfm.no_sale, 0)            <> COALESCE(sc.no_sale, 0)
+        OR COALESCE(wfm.disposition_code, '')  <> COALESCE(sc.disposition_code, '')
+        OR COALESCE(wfm.ob_file_name, '')      <> COALESCE(sc.ob_file_name, '')
+)
+
+SELECT *
+FROM FiltersWFM
+ORDER BY date, ba_account;
