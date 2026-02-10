@@ -262,46 +262,58 @@ If I decide to explore it, would you be open to supporting me?
 And I want to make sure that doing so won’t negatively affect my position here if things don’t work out.
 
 
-----------------------------Rob -------------------------------------------
-Hey, I just wanted to talk through a couple of things and clear up something from our last conversation.
+----------------------------Yamin Brian-------------------------------------------
+در جلسه امروز اینترویو در خصوص تیم لیذ ، این موضوع را از من سوال کردن ؟ یعنی چی این سوال ؟ 
+What your previous managers say about you , What about opportunities? What would they say, where some of your opportunities, things you could learn are things you could do better? 
 
-First, about that comment I made where it sounded like I was saying there’s “no opportunity” here — that was a misunderstanding it might be because of my language . What I meant was that some other teams have really bold projects that get a lot of visibility in AI2 space such as Quarterly hands calls. I didn’t mean to say there’s no opportunity in our team or that I’m not happy here. If it came across the wrong way, I honestly apologize — that wasn’t my intention at all. The second thing that Matthew said, regarding ownership, just wanted to day, I tried my best to cover PES issue and take ownership (you are aware of my attempts for MBNA although some of the task was assigned to Aayush, I helped to get resolved even outside working hour or weekend) to take the initiative for any task is coming from PES team, 
+so for example, I'm just going I don't know if this is you, you know, it sounds like you're someone who likes to do very thorough work.  Has your manager ever said that sometimes you're solutions are too complicated, for example, and that you could try to work faster versus, you know, I don't know if that's you, right? But something like that as there in your performance reviews or in your coaching with your managers, 
+as something come up that you know as an opportunity for you and that you could work on? Yes, absolutely. 
+	#answer 
+As a technical lead, I sometimes took on too much myself early on, 
+especially for complex problems. My manager coached me on delegating 
+earlier and trusting the team more.
 
-The next thing is related to my career direction. Recently I was browsing LinkedIn and I noticed the Finance team had an opening. The role caught my attention because it connects really well with my previous experience in my ERP and financial systems, and it seems like a place where I could grow, contribute more, and really build out my long-term career path. I reached out to the manager for a quick coffee chat, just to learn more about the role, and the conversation made me feel like it might be a good fit for me. 
+Since then, I’ve been more intentional 
+about breaking problems down, assigning ownership, 
+and focusing my time on unblock­ing the team rather than solving everything personally.
 
-To be honest — this isn’t about being unhappy here or applying everywhere. It’s simply that this specific role aligns closely with my background and where I see myself heading in the future. 
+Sorry, I may not have fully understood the question at first—possibly due to some interview nerves—but I’m very open to feedback and I regularly ask my manager in quarterly reviews to highlight areas where I can improve.
+One example was a few years ago around visibility of my work: I’m not naturally someone who self-promotes and tend to be more reserved, and my manager coached me on communicating my contributions more clearly, which I’ve been actively working on.
 
-Also, you probably remember that last time I mentioned I was hoping to work toward a Level 10 promotion. I understand that these things take time, and you must have had an exceptional project or achievements to reach this Level and I understand how expectations work and what’s needed to get to that level. 
+نسخه خیلی مینیمال‌تر و safe‌تر (اگه خواستی):
 
-So wanted to be open with you about where my head is at, you know this situation is really hard for me, If you allow me , I want to go , but your support means a lot to me. If I move forward with this opportunity, I really hope I can count on your support and a positive reference. I appreciate everything you’ve done for me, and I want to make sure I leave a good impression and keep a strong relationship with the team. 
+I’m very open to feedback, and in my quarterly reviews I actively ask my manager to be direct about areas where I can improve so I can work on them.
+One example was around visibility of my work—since I’m naturally more reserved and focused on delivery rather than self-promotion, my manager coached me to communicate progress and impact more 
+proactively, which I’ve been consciously improving as part of 
+my leadership 
 
-----------JD CIB-----
-Job Description
-What You’ll Be Doing
-As a Senior Consultant, Application Development, you will lead the functional design and development of application systems across various technologies and platforms. This role is part of the Enterprise Wires Modernization (EWM) program, a strategic multi-year initiative aimed at implementing a cutting-edge wire payment platform. You will provide expert consultation to senior management on a wide range of existing and emerging infrastructure technologies. Your responsibilities include translating user requirements into comprehensive process and data specifications, as well as crafting innovative solutions that drive substantial business impact. In this position, you will provide technical leadership to develop precise steps and processing logic across all platforms, ensuring that designed specifications meet business needs. Additionally, you will offer comprehensive senior-level technical consulting to IT senior management and technical teams, making technology selection decisions in situations where business requirements may not be fully defined.
-At CIBC, we strive to create an optimal work environment for you to thrive in your role. Details regarding your work arrangement (proportion of on-site and remote work) will be discussed during your interview.
-How You’ll Succeed
-•	Strategic Development & Execution: Perform and coordinate complex solution design activities. Understand business requirements and translate them into system and application designs aligned with our technology roadmap. Design and document technical functionality, infrastructure, interfaces, and integrations. Lead the creation of cost-effective and innovative solutions to meet business objectives and enhance operational efficiency.
-•	Strategy and Roadmap: Contribute to technology roadmaps that align with the bank’s vision, strategy, and business objectives. Lead multiple complex technology solutions while maintaining consistency across the platform, adopting best practices, and driving continuous improvements.
-•	Stakeholder Management: Act as the solution lead, interfacing with project teams by driving and moderating design review sessions. Ensure that the overall design aligns with business requirements and architectural directions. Support and mentor junior designers and developers through knowledge sharing, collaboration, and effective problem-solving.
+yamin  
+you were talking with a team about how to validate the quality of the data and someone who recommended a sport check you didn't necessarily agree, you thought being better to check comprehensively, but you also understand that there would be a large number of records maybe in a table in your case it may be very simple. maybe 25, maybe 200, maybe even 2000. But in other cases, there could be two million, right?  Or 20 million, right? Or in the billions, right? Now, something like that, what maybe just a very simple way, right?  Like how would you check with source and target the matching records for a table that has a large volume of transactions? What would be an approach you would be used, thinking technically from a technical standpoint.
 
-Who You Are
-•	You can demonstrate experience: 8-10+ years of experience in most of the following: Azure Data Factory, Azure SQL MI, IBM ACE, JAVA 17, J2EE, Oracle (11g or higher), JavaScript, JSON, XML, Visual Studio Code, SQL, Power BI, Azure APIM, IBM MQ, ADLS, Azure MSI/MUI, Azure RBAC, and Azure NSG. Experience building and integrating with external systems using SOAP/REST APIs; knowledge of Single Sign-On is an asset. Familiarity with DevOps tools such as GitHub, Jenkins, Maven, Ansible, and Artifactory is advantageous. Experience with various data storage solutions, including Delta Lake and databases. Proficient in data export/import from different SQL server offerings and ADLS. Conducting performance tuning for Azure SQL MI. Strong understanding of indexes, partitions, data files, and expertise in SQL query optimization. Design end-to-end technical solutions for tier 1 data store applications with near real-time reporting capabilities. Experience with waterfall methodology; knowledge of Agile and DevOps methodologies is a plus. Understanding of large value payments and wires, SWIFT, ISO 20022, LVTS/Lynx is an asset. Experience with incident, problem, and change management. Degree/diploma in Computer Science or a related field, with at least 5+ years in a development role leading projects and designing solutions.
-•	Your influence makes an impact. You know that relationships and networks are essential to success.  You inspire outcomes by making yourself heard.
-•	You're driven by collective success. You know that collaboration can transform a good idea into a great one. You understand the power of a team that enjoys working together to create a shared vision.
-•	You embrace and champion change: You’ll continuously evolve your thinking and the way you work to deliver your best. You empower and enable others to make continuous improvement, go above and beyond, and deliver results.
-•	You put our clients first. You engage with purpose to find the right solutions. You go the extra mile because it's the right thing to do.
-•	Values matter to you. You bring your real self to work and you live our values - trust, teamwork, and accountability.
+For large-volume tables, I wouldn’t do row-by-row validation because it’s not scalable.
+I usually combine multiple lightweight checks: record counts by partition or business key, aggregate comparisons like sums and min/max on key columns, and targeted sampling for deeper validation.
 
-
----------
-ADF , Azure databricks
+If needed, I also use hash-based checks at a grouped level to detect discrepancies without scanning every row, and only drill down when an anomaly is detected.
 
 
-let's say I have a database where I have 30 plus monthly partitions. Okay? And I want to reduce it to, let's say, six partitions, remaining 24 partitions, I want to move it to Data Lake. 
-Right? And I would like to create a delta Lake on it and then provide a way to act still search for my end users. That is the use case. 
-What I would like you to do is to tell me walk me through the step-by-step process on audio do you achieve it. How do you take the data from these monthly partitions? How do you inject to Data Lake? 
-How do you create the delta Lake from there to make it accessible for the end user still for using my UI or using some APIs and whatnot. Okay, so in this case, so for example, we have at your time, I need the details step by step, like as a data engineer, where do you start, like over all the steps steps in moving the data and making it accessible. Source is a sql mi 
+Yamin 2nd Quest
+My question to you is in a setting like that, right, what are some key principles? And again, not necessarily a writer or wrong answer here, but I just want to understand your deduction in thinking. Would you say our maybe the tricks of the trade or maybe things that are fundamental for a team to stay organized, move forward, and deliver at a rapid speed?  What are some critical elements that are needed for a team to function that well from your standpoint or from your opinion?
+
+
+For a team to move fast and stay organized, I think three things are fundamental: clear expectations, pragmatic decision-making, and ownership.
+When standards are clear and people understand when to go simple versus when to go deep, the team avoids 
+unnecessary complexity and can deliver quickly and consistently.
+
+contd 
+So this is more from a leadership point of view, right? So we have a team, we need to move forward. We need to stay organized, and I my question to you is, from your standpoint, what are some fundamental things and they don't have to be necessarily technical, they could be functional.  What are some of those critical things that are important for the team to stay focussed, stay organize March forward and deliver quality things at a obviously in a record time or in a very fast-paced environment. What are some of those fundamental things? this is not a technical question, right? 
+
+Like, Leveraging teams to get a hold of somebody versus sending them an email, for example, right? So that you can move quickly, right? Do you have examples of how you organize yourself, how you lead, how you take ownership, that you can show the team so that we can move quickly? 
+
+In situations like that, my first step is to understand what’s slowing them down—whether it’s priority conflicts, unclear requirements, or a technical blocker.
+If timelines are tight, I take ownership by helping directly, breaking the work into smaller steps, or pairing with them to unblock progress, rather than waiting or escalating immediately.
+The goal is to support and coach in the moment so the sprint stays on track and the person also learns how to move faster next time.
+
+
 
 ======
 path = "abfss://home@edaaaazepca0edanacc0001.dfs.core.windows.net/users/EDC/"
