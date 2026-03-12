@@ -76,119 +76,60 @@ ORDER BY date, ba_account;
 
 Improved Query to Identify Which Columns Differ
 
-WITH FiltersWFM AS (
+WITH CompareData AS
+(
 SELECT
     COALESCE(wfm.ba_account_number, sc.BAAccountNumber) AS ba_account,
     COALESCE(wfm.calldatetime, sc.CallDateTime) AS date,
 
-    CASE
-        WHEN wfm.ba_account_number IS NULL THEN 'Only in sc'
-        WHEN sc.BAAccountNumber IS NULL THEN 'Only in ath'
-        ELSE 'Both'
-    END AS record_source,
+    wfm.hold_time  AS wfm_hold_time,
+    sc.HoldTime    AS sc_hold_time,
 
-    -- Original values
-    wfm.hold_time        AS ath_hold_time,
-    sc.HoldTime          AS sc_hold_time,
+    wfm.csl_name   AS wfm_csl_name,
+    sc.CSL_Name    AS sc_csl_name,
 
-    TRIM(LOWER(wfm.csl_name))  AS ath_csl_name,
-    TRIM(LOWER(sc.CSL_Name))   AS sc_csl_name,
+    wfm.disposition_name AS wfm_disposition,
+    sc.DispositionName   AS sc_disposition,
 
-    TRIM(LOWER(wfm.disposition_name)) AS ath_disposition_name,
-    TRIM(LOWER(sc.DispositionName))   AS sc_disposition_name,
+    wfm.ob_file_name AS wfm_file,
+    sc.FileName      AS sc_file,
 
-    TRIM(LOWER(wfm.ob_file_name)) AS ath_file_name,
-    TRIM(LOWER(sc.FileName))      AS sc_file_name,
-
-    wfm.phone AS ath_phone,
+    wfm.phone AS wfm_phone,
     sc.phone  AS sc_phone,
 
-    -- Column level comparison flags
-    CASE WHEN wfm.hold_time <> COALESCE(sc.HoldTime,0) THEN 1 ELSE 0 END AS hold_time_diff,
+    -- difference flags
+    CASE WHEN ISNULL(wfm.hold_time,-1) <> ISNULL(sc.HoldTime,-1)
+         THEN 1 ELSE 0 END AS hold_time_diff,
 
-    CASE WHEN TRIM(LOWER(wfm.csl_name)) <> TRIM(LOWER(sc.CSL_Name))
+    CASE WHEN TRIM(LOWER(ISNULL(wfm.csl_name,''))) <>
+              TRIM(LOWER(ISNULL(sc.CSL_Name,'')))
          THEN 1 ELSE 0 END AS csl_name_diff,
 
-    CASE WHEN TRIM(LOWER(wfm.disposition_name)) <> TRIM(LOWER(sc.DispositionName))
+    CASE WHEN TRIM(LOWER(ISNULL(wfm.disposition_name,''))) <>
+              TRIM(LOWER(ISNULL(sc.DispositionName,'')))
          THEN 1 ELSE 0 END AS disposition_diff,
 
-    CASE WHEN TRIM(LOWER(wfm.ob_file_name)) <> TRIM(LOWER(sc.FileName))
-         THEN 1 ELSE 0 END AS file_name_diff,
+    CASE WHEN TRIM(LOWER(ISNULL(wfm.ob_file_name,''))) <>
+              TRIM(LOWER(ISNULL(sc.FileName,'')))
+         THEN 1 ELSE 0 END AS file_diff,
 
-    CASE WHEN wfm.phone <> sc.phone
+    CASE WHEN ISNULL(wfm.phone,'') <> ISNULL(sc.phone,'')
          THEN 1 ELSE 0 END AS phone_diff
 
 FROM fact_outbound_dialer_202601 wfm
 FULL OUTER JOIN outbound_src_tdct sc
     ON sc.BAAccountNumber = wfm.ba_account_number
-   AND sc.CallDateTime = wfm.calldatetime
+   AND sc.CallDateTime   = wfm.calldatetime
 )
 
 SELECT *
-FROM FiltersWFM
+FROM CompareData
 WHERE
-      record_source <> 'Both'
-   OR hold_time_diff = 1
-   OR csl_name_diff = 1
-   OR disposition_diff = 1
-   OR file_name_diff = 1
-   OR phone_diff = 1
+       hold_time_diff = 1
+    OR csl_name_diff = 1
+    OR disposition_diff = 1
+    OR file_diff = 1
+    OR phone_diff = 1
+    OR wfm_hold_time IS NULL
+    OR sc_hold_time IS NULL
 ORDER BY date, ba_account;
-
-
-
-#Query Using CROSS APPLY (best for SQL Server)
-
-WITH base AS
-(
-SELECT
-    COALESCE(wfm.ba_account_number, sc.BAAccountNumber) AS ba_account,
-    COALESCE(wfm.calldatetime, sc.CallDateTime) AS date,
-
-    wfm.hold_time,
-    sc.HoldTime,
-
-    TRIM(LOWER(wfm.csl_name)) AS wfm_csl,
-    TRIM(LOWER(sc.CSL_Name))  AS sc_csl,
-
-    TRIM(LOWER(wfm.disposition_name)) AS wfm_disp,
-    TRIM(LOWER(sc.DispositionName))   AS sc_disp,
-
-    TRIM(LOWER(wfm.ob_file_name)) AS wfm_file,
-    TRIM(LOWER(sc.FileName))      AS sc_file,
-
-    wfm.phone AS wfm_phone,
-    sc.phone  AS sc_phone
-
-FROM fact_outbound_dialer_202601 wfm
-FULL OUTER JOIN outbound_src_tdct sc
-    ON sc.BAAccountNumber = wfm.ba_account_number
-   AND sc.CallDateTime = wfm.calldatetime
-)
-
-SELECT
-    ba_account,
-    date,
-    col.column_name,
-    col.wfm_value,
-    col.sc_value
-FROM base
-CROSS APPLY
-(
-VALUES
-('hold_time', CAST(hold_time AS varchar(100)), CAST(HoldTime AS varchar(100))),
-('csl_name', wfm_csl, sc_csl),
-('disposition_name', wfm_disp, sc_disp),
-('file_name', wfm_file, sc_file),
-('phone', CAST(wfm_phone AS varchar(100)), CAST(sc_phone AS varchar(100)))
-) col(column_name, wfm_value, sc_value)
-
-WHERE
-    ISNULL(col.wfm_value,'') <> ISNULL(col.sc_value,'')
-
-ORDER BY date, ba_account, column_name;
-
-Now you immediately see:
-	•	which column
-	•	what value in WFM
-	•	what value in SC
